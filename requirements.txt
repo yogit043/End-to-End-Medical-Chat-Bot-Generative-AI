@@ -1,0 +1,43 @@
+# Core ML/DL packages
+faiss-cpu==1.7.4
+scikit-learn
+sentence-transformers
+
+# Essential libraries
+ipykernel==6.25.0
+matplotlib==3.7.2
+numpy==1.23.5
+pandas==1.5.3
+pillow==9.5.0
+tensorflow
+keras
+
+# Web and API handling
+beautifulsoup4==4.12.2
+flask==2.3.3
+google-search-results==2.4.2
+pypdf==3.10.0
+python-dotenv==1.0.0
+streamlit==1.24.0
+wikipedia==1.4.0
+
+# LangChain and related libraries
+chromadb
+google-generativeai
+langchain
+langchain-community
+langchain-experimental
+langchain-google-genai
+langchain-huggingface
+langchain-mistralai
+langchain-nomic
+langchain-openai
+langchain-pinecone
+langchain-text-splitters
+langchainhub
+pinecone-client[grpc]
+tavily-python
+tiktoken
+
+# Optional or specialized
+-e .

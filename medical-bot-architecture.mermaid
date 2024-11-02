@@ -1,0 +1,46 @@
+graph LR
+    %% Frontend Section
+    subgraph Frontend
+        User(User)
+        Query(Query)
+        QueryEmb(Query Embedding)
+    end
+
+    %% Backend Section
+    subgraph Backend
+        MB(Medical Book)
+        EAD(Extract All Docs)
+        
+        subgraph Chunks
+            C1(Chunk 1)
+            C2(Chunk 2)
+            C3(Chunk 3)
+        end
+        
+        EM(Embedding Model)
+        VE1(Vector Embedding)
+        VE2(Vector Embedding)
+        VE3(Vector Embedding)
+        BSI(Build Semantic Index)
+        KB(Knowledge Base<br/>pine cone vector DB)
+        RBR(Rank Based or<br/>Similarity Based Results)
+        LLM(LLM)
+    end
+
+    %% Relationships
+    MB --> EAD
+    EAD --> C1 & C2 & C3
+    C1 & C2 & C3 --> EM
+    EM --> VE1 & VE2 & VE3
+    VE1 & VE2 & VE3 --> BSI
+    BSI --> KB
+    
+    User --> Query
+    Query --> QueryEmb
+    QueryEmb --> KB
+    KB --> RBR
+    RBR --> LLM
+
+    style Frontend fill:#f0f0f0,stroke:#333,stroke-width:2px
+    style Backend fill:#e6e6e6,stroke:#333,stroke-width:2px
+    style Chunks fill:#fff,stroke:#333,stroke-width:1px
